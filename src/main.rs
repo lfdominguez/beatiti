@@ -11,7 +11,7 @@ struct UserData {
     sample_count: usize,
 }
 
-const I16_TO_SMPL: Smpl = 1.0 / 32768.0;
+const I16_TO_SMPL: Smpl = 1.0 / (1 << 16) as Smpl;
 const BUF_SIZE: usize = 1024;
 const HOP_SIZE: usize = BUF_SIZE / 2;
 const BPM_HISTORY_SIZE: usize = 5;  // Number of BPM values to average
