@@ -1,0 +1,8 @@
+[package]
+name = "pipe-beat-detector"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+pipewire = "0.8"
+aubio = { version = "0.2", features = ["double"] }
