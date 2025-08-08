@@ -69,7 +69,7 @@ fn main() -> Result<(), pipewire::Error> {
                 Tempo::new(OnsetMode::Hfc, BUF_SIZE, HOP_SIZE, user_data.format.rate())
                     .unwrap()
                     .with_silence(-40.0)
-                    .with_threshold(0.1)
+                    .with_threshold(0.3)
             );
 
             // Clear any existing buffers when format changes
@@ -132,8 +132,12 @@ fn main() -> Result<(), pipewire::Error> {
                             let bpm = tempo.get_bpm();
                             let confidence = tempo.get_confidence();
 
+                            let last_beat = tempo.get_last_s();
+
+                            print!("{last_beat}                                   \r");
+
                             // Only process meaningful BPM values
-                            if bpm > 0.0 && bpm >= 30.0 && bpm <= 300.0 {
+                            if false && bpm > 0.0 && bpm >= 30.0 && bpm <= 300.0 {
                                 // Add to history
                                 if user_data.bpm_history.len() >= BPM_HISTORY_SIZE {
                                     user_data.bpm_history.remove(0);

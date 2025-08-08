@@ -1,6 +1,6 @@
 # beatiti (WIP)
 
-A Rust application that detects the BPM (Beats Per Minute) of audio playing on your system using Pipewire for audio capture and aubio for beat detection.
+A Rust application that detects the BPM (Beats Per Minute) of audio playing on your system using `Pipewire` for audio capture and `aubio` for beat detection.
 
 ## Features
 
