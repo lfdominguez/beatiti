@@ -97,7 +97,7 @@ The application uses the following default settings:
 
 ## License
 
-[Your License Here]
+MIT
 
 ## Acknowledgments
 
