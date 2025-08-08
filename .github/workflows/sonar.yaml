@@ -13,6 +13,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      
+      - name: Install Dependencies
+        run: |
+          sudo apt update -y
+          sudo apt install -y --no-install-recommends libpipewire-0.3-dev libspa-0.2-dev libaubio-dev pkg-config
+
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
